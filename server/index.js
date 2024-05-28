@@ -1,14 +1,15 @@
-
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const UserModel = require('./models/Users');
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv"
+import UserModel from './models/Users.js';
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+dotenv.config();
 
-mongoose.connect("mongodb://127.0.0.1:27017/crud");
+mongoose.connect(process.env.Atlas_Url);
 
 app.get('/', (req, res) => {
     UserModel.find({})
