@@ -9,7 +9,7 @@ function UpdateUser() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/getUser/${id}`)
+        axios.get(`https://anonymous-feedback-app.onrender.com/getUser/${id}`)
             .then(result => {
                 console.log(result.data);
                 setNumber(result.data.no || '');
@@ -22,7 +22,7 @@ function UpdateUser() {
     const Update = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:3001/updateUser/${id}`, { no, name});
+            await axios.put(`https://anonymous-feedback-app.onrender.com/updateUser/${id}`, { no, name});
             navigate('/edit');
         } catch (error) {
             console.log(error);

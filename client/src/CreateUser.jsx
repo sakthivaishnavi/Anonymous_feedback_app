@@ -10,7 +10,7 @@ function CreateUser()
 
     const Submit = (e) => {
         e.preventDefault();
-        axios.post("http://localhost:3001/createUser", {no, name})
+        axios.post("https://anonymous-feedback-app.onrender.com/createUser", {no, name})
         .then(result => {
             console.log(result)
             navigate('/edit')

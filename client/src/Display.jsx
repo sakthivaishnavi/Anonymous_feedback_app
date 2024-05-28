@@ -8,7 +8,7 @@ function Display ()
     const [users, setUsers] = useState([])
 
     useEffect(()=>{
-        axios.get('http://localhost:3001')
+        axios.get('https://anonymous-feedback-app.onrender.com')
         .then(result => setUsers(result.data))
         .catch(err => console.log(err))
 
