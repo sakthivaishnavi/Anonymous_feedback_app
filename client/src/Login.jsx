@@ -12,7 +12,7 @@ function Login() {
     const loginSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3001/login', { email, password });
+            const response = await axios.post('https://anonymous-feedback-app.onrender.com/login', { email, password });
             console.log(response.data.message);
             navigate('/edit');
         } catch (error) {
