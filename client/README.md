@@ -1,2 +1,0 @@
-#Anonymous Message App - Ghostly
-

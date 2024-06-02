@@ -5,6 +5,7 @@ import Users from './Users'
 import CreateUser from './CreateUser'
 import UpdateUser from './UpdateUser'
 import Display from './Display'
+import Login from './Login'
 
 function App() {
 
@@ -13,10 +14,10 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/' element={<Display />}> </Route>
+        <Route path='/login' element={<Login />}> </Route>
         <Route path='/create' element={<CreateUser />} ></Route>
         <Route path='/update/:id' element={<UpdateUser />}> </Route>
         <Route path='/edit' element={<Users />}> </Route>
-        
       </Routes>
       </BrowserRouter>
      
