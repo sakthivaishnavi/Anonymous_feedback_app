@@ -4,7 +4,6 @@ const Schema = new mongoose.Schema({
     no: {
         type: String,
         required:true,
-        unique: true,
     },
     name: {
         type: String,

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { IoMdArrowRoundBack } from "react-icons/io";
+import { toast } from 'react-toastify';
+
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -14,6 +16,7 @@ function Login() {
         try {
             const response = await axios.post('https://anonymous-feedback-app.onrender.com/login', { email, password });
             console.log(response.data.message);
+            toast.dark('Logging in...');
             navigate('/edit');
         } catch (error) {
             if (error.response) {
@@ -22,6 +25,7 @@ function Login() {
                 setError('Network Error');
             }
             console.error(error);
+            toast.error(error);
         }
     };
 
@@ -40,11 +44,11 @@ function Login() {
                     
                     <div className="mb-3">
                         <input type="email" className="form-control" placeholder="Email" name="email" autoComplete="off"
-                            value={email} onChange={(e) => setEmail(e.target.value)} />
+                            value={email} required onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className="mb-3">
                         <input type="password" className="form-control" placeholder="Password" name="password" autoComplete="off"
-                            value={password} onChange={(e) => setPassword(e.target.value)} />
+                            value={password} required onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <div className="d-flex justify-content-center">
                         <button type="submit" className='btn btn-outline-dark m-1'>Login Now!</button>

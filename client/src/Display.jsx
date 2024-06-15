@@ -27,7 +27,7 @@ function Display() {
         <div className="d-flex vh-100 bg-dark justify-content-center align-items-center">
             <div className='w-50 bg-primary-subtle rounded p-4'>
                 <div className="d-flex justify-content-between align-items-center">
-                    <h3 className="text-dark p-1"><em><u>Anonymous Message</u></em></h3>
+                    <h3 className="text-dark p-1"><em><u>Ghostly</u></em></h3><br/><br/>Unveil your thoughts Anonymously...
                     <button onClick={() => handleNavigation('/login')} className='btn btn-dark'>
                         Admin Login <BiLogInCircle />
                     </button>
@@ -35,7 +35,7 @@ function Display() {
                 <br /> <br />
                 <div className="d-flex justify-content-center">
                     <button onClick={() => handleNavigation('/create')} className='btn btn-dark p-3'>
-                        Send Messages <LuSendHorizonal />
+                        Send a Message <LuSendHorizonal />
                     </button>
                 </div>
                 {loading && (

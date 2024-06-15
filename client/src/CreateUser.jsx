@@ -55,6 +55,7 @@ function CreateUser() {
                             placeholder='Enter an emoji' 
                             className='form-control'
                             value={no} 
+                            required
                             onChange={(e) => setNumber(e.target.value)} 
                         />
                     </div>
@@ -65,6 +66,7 @@ function CreateUser() {
                             placeholder='Enter Message' 
                             className='form-control'
                             value={name} 
+                            required
                             onChange={(e) => setName(e.target.value)} 
                         />
                     </div>

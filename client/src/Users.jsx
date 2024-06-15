@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FiEdit3 } from "react-icons/fi";
 import { BsTrash } from "react-icons/bs";
-import { IoMdArrowRoundBack } from "react-icons/io";
+import { RiLogoutCircleLine } from "react-icons/ri";
+
 import "../src/styles.css"
 
 function Users() {
@@ -41,65 +42,43 @@ function Users() {
           <div className="spinner"></div>
         </div>
       ) : (
-        <div className="w-50 bg-primary-subtle rounded p-4">
-          <div className="d-flex justify-content-start align-items-center mb-3">
-            <button
-              type="button"
-              className="btn btn-dark btn-sm p-1 me-2"
-              onClick={() => navigate("/login")}
-            >
-              <IoMdArrowRoundBack style={{ fontSize: "16px" }} />
-            </button>
+        <div className="w-50 bg-primary-subtle rounded p-4">            
+            
+            <div className="d-flex justify-content-between align-items-center">
             <h1 className="mb-0">
               <em>
-                <u>Anonymous Message</u>
+                <u>Inbox</u>
               </em>
             </h1>
-          </div>
+                 <button onClick={() => navigate('/')} className='btn btn-dark'>
+                        Logout <RiLogoutCircleLine />
+                 </button>
+            </div>
+           
+         <br/><br/>
 
           <div className="table-responsive">
             <table className="table table-primary table-hover">
               <thead>
                 <tr className="text-center">
-                  <th>Emoji</th>
-                  <th>Message</th>
-                  <th>Action</th>
+                  <th>EMOJI</th>
+                  <th>MESSAGE</th>
+                  <th>ACTION</th>
                 </tr>
               </thead>
               <tbody className="text-center">
                 {users.map((user) => {
                   return (
                     <tr key={user._id}>
-                      <td>
-                        <b>{user.no}</b>
-                      </td>
-                      <td>
-                        <em>
-                          <b>{user.name}</b>
-                        </em>
-                      </td>
-                      <td>
-                        <Link
-                          to={`/update/${user._id}`}
-                          className="btn btn-outline-dark m-1"
-                        >
-                          <em>
-                            <b>
-                              Update
-                              <FiEdit3 />
-                            </b>{" "}
-                          </em>
-                        </Link>
+                      <td><b>{user.no}</b></td>
+                      <td><em><b>{user.name}</b></em></td>
+                      <td><Link to={`/update/${user._id}`}
+                          className="btn btn-outline-dark m-1">
+                          <em><b>Update<FiEdit3 /></b>{" "}</em></Link>
                         <button
                           className="btn btn-outline-dark m-1"
-                          onClick={(e) => handleDelete(user._id)}
-                        >
-                          <em>
-                            <b>
-                              Delete
-                              <BsTrash />
-                            </b>
-                          </em>
+                          onClick={(e) => handleDelete(user._id)}>
+                          <em><b> Delete<BsTrash /></b></em>
                         </button>
                       </td>
                     </tr>
