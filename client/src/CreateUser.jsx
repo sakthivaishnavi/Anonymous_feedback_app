@@ -15,7 +15,7 @@ function CreateUser() {
         if (confirmation) {
             setLoading(true);
             console.log("Sending data:", { no, name });
-            axios.post("https://anonymous-feedback-app.onrender.com/createUser", { no, name })
+            axios.post("https://anonymous-feedback-app-k60e.onrender.com/createUser", { no, name })
                 .then(result => {
                     console.log("Response received:", result);
                     setLoading(false);

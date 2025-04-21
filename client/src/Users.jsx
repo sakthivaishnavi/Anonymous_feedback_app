@@ -14,7 +14,7 @@ function Users() {
 
   useEffect(() => {
     axios
-      .get("https://anonymous-feedback-app.onrender.com/")
+      .get("https://anonymous-feedback-app-k60e.onrender.com")
       .then((result) => {
         setUsers(result.data);
         setLoading(false);
@@ -27,7 +27,7 @@ function Users() {
 
   const handleDelete = (id) => {
     axios
-      .delete("https://anonymous-feedback-app.onrender.com/deleteUser/" + id)
+      .delete("https://anonymous-feedback-app-k60e.onrender.com/deleteUser/" + id)
       .then((res) => {
         console.log(res);
         window.location.reload();

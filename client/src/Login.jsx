@@ -14,7 +14,7 @@ function Login() {
     const loginSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://anonymous-feedback-app.onrender.com/login', { email, password });
+            const response = await axios.post('https://anonymous-feedback-app-k60e.onrender.com/login', { email, password });
             console.log(response.data.message);
             toast.dark('Logging in...');
             navigate('/edit');

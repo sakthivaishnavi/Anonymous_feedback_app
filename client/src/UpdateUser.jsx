@@ -12,7 +12,7 @@ function UpdateUser() {
 
     useEffect(() => {
         setLoading(true);
-        axios.get(`https://anonymous-feedback-app.onrender.com/getUser/${id}`)
+        axios.get(`https://anonymous-feedback-app-k60e.onrender.com/getUser/${id}`)
             .then(result => {
                 setNumber(result.data.no || '');
                 setName(result.data.name || '');
@@ -28,7 +28,7 @@ function UpdateUser() {
         e.preventDefault();
         setLoading(true);
         try {
-            await axios.put(`https://anonymous-feedback-app.onrender.com/updateUser/${id}`, { no, name });
+            await axios.put(`https://anonymous-feedback-app-k60e.onrender.com/updateUser/${id}`, { no, name });
             setLoading(false);
             navigate('/edit');
         } catch (error) {

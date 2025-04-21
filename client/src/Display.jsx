@@ -10,7 +10,7 @@ function Display() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('https://anonymous-feedback-app.onrender.com/')
+        axios.get('https://anonymous-feedback-app-k60e.onrender.com')
             .then(result => setUsers(result.data))
             .catch(err => console.log(err));
     }, []);
